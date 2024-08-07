@@ -13,31 +13,42 @@
 
     <!-- Custom CSS -->
     <style>
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #27ae60;
+            --accent-color: #f1c40f;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+            --light-text: #ffffff;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
+            background-color: var(--background-color);
             margin: 0;
             padding: 0;
+            color: var(--text-color);
         }
 
         .navbar {
             margin-bottom: 30px;
-            border-bottom: 1px solid #dee2e6;
+            border-bottom: 1px solid var(--secondary-color);
+            background-color: var(--primary-color) !important;
         }
 
         .navbar-brand {
             font-size: 1.5rem;
             font-weight: bold;
+            color: var(--light-text) !important;
         }
 
         .album {
-            background-color: #e9ecef;
+            background-color: var(--background-color);
             padding: 30px 0;
         }
 
         .container {
             max-width: 960px;
-            /* Adjusted for a smaller container */
         }
 
         .card {
@@ -47,10 +58,11 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .card-img-top {
-            border-bottom: 1px solid #dee2e6;
+            border-bottom: 1px solid var(--secondary-color);
             transition: transform 0.3s ease;
         }
 
@@ -64,19 +76,30 @@
         }
 
         .btn-bd-primary {
-            --bs-btn-bg: #007bff;
-            --bs-btn-border-color: #007bff;
+            --bs-btn-bg: var(--primary-color);
+            --bs-btn-border-color: var(--primary-color);
+            color: var(--light-text);
         }
 
         .btn-bd-primary:hover {
-            --bs-btn-bg: #0056b3;
-            --bs-btn-border-color: #004085;
+            --bs-btn-bg: var(--secondary-color);
+            --bs-btn-border-color: var(--secondary-color);
+        }
+
+        .btn-outline-secondary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--light-text);
         }
 
         .footer {
             padding: 30px;
-            background-color: #343a40;
-            color: #ffffff;
+            background-color: var(--primary-color);
+            color: var(--light-text);
             text-align: center;
             position: relative;
             bottom: 0;
@@ -84,7 +107,7 @@
         }
 
         .footer a {
-            color: #ffffff;
+            color: var(--accent-color);
             text-decoration: none;
         }
 
@@ -93,25 +116,34 @@
         }
 
         .text-muted {
-            color: #6c757d !important;
+            color: var(--text-color) !important;
         }
 
         .btn-group button {
             margin: 0;
         }
 
-        /* Ensure card containers have a consistent height */
         .card {
             height: 100%;
         }
 
         .card-img-top {
             height: 200px;
-            /* Adjust the height as needed */
             object-fit: cover;
-            /* Ensures images cover the area without distortion */
             width: 100%;
-            /* Ensures the image takes the full width of the card */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--primary-color);
+        }
+
+        .lead {
+            color: var(--text-color);
         }
     </style>
 
@@ -125,34 +157,30 @@
     <header>
         <nav class="navbar navbar-dark bg-dark">
             <div class="container">
-                <a href="#" class="navbar-brand">Album</a>
+                <a href="#" class="navbar-brand">Glossary</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="text-center container py-5">
-            <h1 class="fw-light">Album Example</h1>
-            <p class="lead text-muted">A brief description about the collection below.</p>
-           
-        </section>
+ 
 
         <div class="album py-5">
-            <h1 class="text-center mb-4">Kitchen Glossary</h1>
+            <h1 class="text-center mb-4">Dryfruits</h1>
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <!-- Card block -->
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="https://m.media-amazon.com/images/I/81CFBPAMmdL._AC_UL320_.jpg" class="card-img-top"
-                                alt="Thumbnail">
+                            <img src="https://m.media-amazon.com/images/I/81CFBPAMmdL._AC_UL320_.jpg"
+                                class="card-img-top" alt="Thumbnail">
                             <div class="card-body">
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 400</small>
                                 </div>
                             </div>
                         </div>
@@ -166,9 +194,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 350</small>
                                 </div>
                             </div>
                         </div>
@@ -182,9 +210,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 450</small>
                                 </div>
                             </div>
                         </div>
@@ -198,9 +226,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹67</small>
                                 </div>
                             </div>
                         </div>
@@ -214,9 +242,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹89</small>
                                 </div>
                             </div>
                         </div>
@@ -230,9 +258,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 90</small>
                                 </div>
                             </div>
                         </div>
@@ -246,9 +274,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 89</small>
                                 </div>
                             </div>
                         </div>
@@ -262,9 +290,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 60</small>
                                 </div>
                             </div>
                         </div>
@@ -278,9 +306,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 55</small>
                                 </div>
                             </div>
                         </div>
@@ -294,9 +322,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 80</small>
                                 </div>
                             </div>
                         </div>
@@ -310,9 +338,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 230</small>
                                 </div>
                             </div>
                         </div>
@@ -326,9 +354,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 150</small>
                                 </div>
                             </div>
                         </div>
@@ -342,9 +370,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 200</small>
                                 </div>
                             </div>
                         </div>
@@ -358,9 +386,9 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 75</small>
                                 </div>
                             </div>
                         </div>
@@ -374,14 +402,13 @@
                                 <p class="card-text">A wider card with supporting text below.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Order</button>
+                                        <a href="../../order.html" class="btn btn-sm btn-outline-secondary">Order</a>
                                     </div>
-                                    <small class="text-muted">9 mins</small>
+                                    <small class="text-muted">₹ 100</small>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <!-- <div class="col"> ... </div> -->
                 </div>
             </div>

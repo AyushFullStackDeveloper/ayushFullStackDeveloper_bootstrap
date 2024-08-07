@@ -1,227 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Something</title>
-    <style>
-        /* General Reset */
-        body,
-        h1,
-        h2,
-        p,
-        label,
-        input,
-        select,
-        textarea,
-        button {
+    <title>ECOMMERCE WEBSITE DOWNLOAD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style type="text/css">
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            color: #010f1c;
+            font-family: "Jost", sans-serif;
+            ;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background: #efefef;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            height: 100vh;
+            width: 100%;
         }
 
-        .container {
-            width: 100%;
-            max-width: 600px;
+        section {
+            max-width: 95%;
+            max-height: 90vh;
+            width: 600px;
             background: #fff;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease-in-out;
+            overflow-y: auto;
+            border-top: 10px solid #0989ff;
+            ;
+
         }
 
-        .container:hover {
-            transform: scale(1.02);
+        .flex {
+            display: flex;
+            flex-direction: column;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 2.75rem;
-            color: #007bff;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        main {
-            margin-bottom: 30px;
-        }
-
-        .order-form,
-        .confirmation {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .order-form.active,
-        .confirmation.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .order-form h2,
-        .confirmation h2 {
-            margin-bottom: 20px;
-            font-size: 2rem;
-            color: #007bff;
-        }
-
-        label {
-            margin-bottom: 8px;
-            font-weight: 500;
-            display: block;
-            font-size: 1rem;
-        }
-
-        input,
-        select,
-        textarea,
-        button {
-            width: 100%;
-            margin-bottom: 20px;
-            padding: 14px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease-in-out;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-
-        button {
-            background-color: #007bff;
-            color: #fff;
+        .flex input {
             border: none;
+            outline: none;
+            padding: 0px 20px;
+            height: 50px;
+            width: 100%;
+            border: 1px solid #e8e8e8;
+        }
+
+        .m10 {
+            margin-top: 10px;
+
+        }
+
+        .m20 {
+            margin-top: 20px;
+        }
+
+        button {
+            width: 200px;
+            border: none;
+            outline: none;
             cursor: pointer;
-            font-size: 1.1rem;
-            padding: 15px;
-            transition: background-color 0.3s ease-in-out, transform 0.2s;
+            height: 50px;
+            background: #0989ff;
+            color: #fff;
+            padding: 0px 20px;
+
+        }
+
+        input:focus {
+            border: 1px solid #0989ff;
         }
 
         button:hover {
-            background-color: #0056b3;
-            transform: scale(1.02);
+            background: #0870d0;
         }
 
-        .error-message {
-            color: #d9534f;
-            font-size: 0.875rem;
-            margin-top: -15px;
-            margin-bottom: 20px;
+        .get_qr {
+
+            height: 200px;
+            width: 200px;
+            border: 1px solid #999;
+            background: #efefef;
         }
 
-        footer {
-            text-align: center;
-            font-size: 0.875rem;
-            color: #777;
-            margin-top: 30px;
+        .qr_code {
+            width: 100%;
+            height: 100%;
+            display: none;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
+        p {
+            color: #7a7a7a;
+            font-size: 16px;
+            line-height: 24px
+        }
 
-            button {
-                font-size: 1rem;
-            }
-
-            textarea {
-                height: 80px;
-            }
+        .im {
+            max-width: 100%;
+            width: 300px;
         }
     </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".generate_qr").click(function () {
+                $(".form").hide();
+                $(".qr_code").show();
+                var num = $(".number").val();
+                var link = "upi://pay?pa=9970954494@axl%26am=1500%26tn=" + num;
+                var upi = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + link;
+                console.log(upi);
+                $(".get_qr").attr("src", upi);
+            });
+            $(".download_now").click(function () {
+                var name = $(".name").val();
+                var num = $(".number").val();
+                var email = $(".email").val();
+                var id = $(".id").val();
+                if (num != "" && name != "" && email != "" && id != "") {
+                    /*$.post("back.php",{name:name,num:num,email:email,id:id},function(res) {
+                        if(res==1){
+
+                        }
+                        else{
+
+                        }
+                    });*/
+                } else {
+                    alert("Fill all fields correctly");
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Order Your Favorite Items</h1>
-        </header>
-
-        <main>
-            <div class="order-form active" id="orderForm">
-                <h2>Place Your Order</h2>
-
-                <form id="form">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
-                    <div class="error-message" id="nameError"></div>
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
-                    <div class="error-message" id="emailError"></div>
-
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" placeholder="Enter Your Address" required>
-                    <div class="error-message" id="addressError"></div>
-
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter Quantity" required>
-                    <div class="error-message" id="quantityError"></div>
-
-                    <label for="special-requests">Special Requests:</label>
-                    <textarea id="special-requests" name="special-requests"></textarea>
-
-                    <button type="button" onclick="submitForm()">Submit Order</button>
-                </form>
+    <section>
+        <h1>ECOMMERCE WEBSITE CODE</h1>
+        <div class="form">
+            <div class="flex m20">
+                <label>Full Name*</label>
+                <input type="text" name="name" placeholder="Full Name" class="m10 name">
             </div>
-
-            <div class="confirmation" id="confirmation">
-                <h2>Your Order Has Been Submitted</h2>
-                <p>Thank you for your order! We will process it shortly.</p>
+            <div class="flex m20">
+                <label>Whatsapp Number(With ISD)*</label>
+                <input type="text" name="phone" placeholder="Ex- +918208830672" class="m10 number">
             </div>
-        </main>
+            <div class="flex m20">
+                <label>Email*</label>
+                <input type="email" name="email" placeholder="Email" class="m10 email">
+            </div>
+            <div class="flex m20">
+                <label>Address</label>
+                <input type="text"  placeholder="enter your Address" class="m10 Address">
+            </div>
+            <div class="flex m20">
+                <label>Pincode</label>
+                <input type="number"  placeholder="enter your Pincode" class="m10 Pincode">
+            </div>
+            <div class="flex m20">
 
-        <footer>
-            <p>&copy; 2024 Order Something Inc.</p>
-        </footer>
-    </div>
-
-    <script>
-        function submitForm() {
-            // Get form element
-            const form = document.getElementById('form');
-            
-            // Clear previous error messages
-            const errorMessages = document.querySelectorAll('.error-message');
-            errorMessages.forEach(msg => msg.textContent = '');
-
-            // Check if form is valid
-            if (form.checkValidity()) {
-                // Hide the order form and show the confirmation message
-                document.getElementById('orderForm').classList.remove('active');
-                document.getElementById('confirmation').classList.add('active');
-            } else {
-                // Show validation error messages
-                form.reportValidity();
-            }
-        }
-    </script>
+                <button class="generate_qr">NEXT</button>
+            </div>
+        </div>
+        <div class="qr_code m20">
+            <p>Scan the QR Code with any UPI App and pay the amount then download the source code.</p>
+            <!-- <center><img src="" alt="QR CODE" class="get_qr m10"></center> -->
+            <center><img src="../images/QR.png" class="im m10"></center>
+            <div class="flex m20">
+                <label>UTR/REFERENCE/TRANSACTION ID**</label>
+                <input type="number" name="email" placeholder="UTR/REFERENCE/TRANSACTION ID**" class="m10 id">
+            </div>
+            <button class="download_now m20">Download Now</button>
+        </div>
+    </section>
 </body>
 
 </html>
