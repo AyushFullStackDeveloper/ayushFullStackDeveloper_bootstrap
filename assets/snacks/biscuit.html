@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Example · Bootstrap v5.3</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        .hero-section {
+            background: url('https://source.unsplash.com/1600x900/?nature,water') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            height: 180px;
+        }
+
+        .btn-custom-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        .btn-custom-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-custom-secondary {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+        }
+
+        .btn-custom-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 2rem 0;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .theme-toggle-btn {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            z-index: 1050;
+        }
+
+        /* foooter */
+        .footer-custom {
+            background-color: #f8f9fa;
+            padding: 2rem 0;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .footer-custom a {
+            color: #007bff;
+        }
+
+        .footer-custom a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-custom .btn-custom-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .footer-custom .btn-custom-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .theme-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1050;
+        }
+
+        .btn-custom-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        .btn-custom-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .dropdown-menu {
+            min-width: 150px;
+        }
+
+        .dropdown-menu .dropdown-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-menu .dropdown-item i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Album Example</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Album Section -->
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+                <!-- Repeat this block for each card -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2023/3/291829697/UT/JE/CF/51126755/britannia-bourbon-biscuit-500x500.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLZX84fMYDZrQ6OeyZAChM0EKlfQLL5VNetA&s"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKFtzCtkuzhTOrgEwh4-p_bgFQMnEIrsyVfg&s"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZFgfIV6ykA6A8LGc999SN4m8IpEKD8aSR4g&s"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ00QCaoOzxgHzRQQd8KKEqAp-dhvNVRxrBbg&s"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPauzwoSySAb-Ylm0-LZevQqsCve7-tuW1RQ&s"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpXJVtn3VO_YwQtMTxRRTzjU7WBxmJliP70w&s"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStyZHEtNKEPM3KJ3EoHPnKj50pNs_ndL9oQQ&s"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7w1ZJ-TiZaIKlDErZPn7kxSHxsiSMwf3kpQ&s"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN0ZuJJKdnihhnfDRV-HPng20MMkMj_x4hMg&s"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5khou1Wufv9JZWg6cVG-GVi68T6AEflbVTg&s"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://m.media-amazon.com/images/I/61m7bY5QG6L._AC_UL480_FMwebp_QL65_.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://m.media-amazon.com/images/I/713qpZ2mZ2L._AC_UL480_FMwebp_QL65_.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://m.media-amazon.com/images/I/71wrIi8XYVL._AC_UL480_FMwebp_QL65_.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://m.media-amazon.com/images/I/71X7TZPso-L._AC_UL480_FMwebp_QL65_.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://m.media-amazon.com/images/I/81GGvbHFdIL._AC_UL480_FMwebp_QL65_.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://m.media-amazon.com/images/I/71Gw97RxRXL._AC_UL480_FMwebp_QL65_.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://m.media-amazon.com/images/I/81md+ROSNHL._AC_UL480_FMwebp_QL65_.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://m.media-amazon.com/images/I/81MN-1kvlSL._AC_UL480_FMwebp_QL65_.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://m.media-amazon.com/images/I/81RUiLiO9tL._AC_UL480_FMwebp_QL65_.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of card block -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://m.media-amazon.com/images/I/71HKwBDOTXL._AC_UL480_QL65_.jpg"
+                            class="card-img-top" alt="Description of image">
+                        <div class="card-body">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-custom text-center">
+        <div class="container">
+            <p class="mb-1">
+                <a href="#">Back to top</a>
+                <a href="../../index.html" class="btn btn-custom-secondary ms-2">Back to Home</a>
+            </p>
+            <p class="mb-1">Album example is © Bootstrap, but please download and customize it for yourself!</p>
+            <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+                    href="/docs/5.3/getting-started/introduction/">getting started guide</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <div class="dropdown theme-toggle-btn">
+        <button class="btn btn-custom-primary dropdown-toggle d-flex align-items-center" type="button" id="themeToggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-sun"></i> Light
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeToggle">
+            <li><button class="dropdown-item" type="button" data-bs-theme="light"><i class="fa-solid fa-sun"></i> Light</button></li>
+            <li><button class="dropdown-item" type="button" data-bs-theme="dark"><i class="fa-solid fa-moon"></i> Dark</button></li>
+            <li><button class="dropdown-item" type="button" data-bs-theme="auto"><i class="fa-solid fa-circle-half-stroke"></i> Auto</button></li>
+        </ul>
+    </div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Font Awesome for Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+
+</html>
