@@ -21,15 +21,22 @@
 
     <!-- Custom CSS -->
     <style>
-           /* CSS Variables for Theme Colors */
-           :root {
-            --primary-color: #4caf50; /* Green */
-            --secondary-color: #ff5722; /* Deep Orange */
-            --accent-color: #ffc107; /* Amber */
-            --background-color: #f0f4c3; /* Light Lime */
-            --text-color: #333333; /* Dark Gray */
-            --light-text-color: #ffffff; /* White */
-            --card-background: #ffffff; /* White */
+        /* CSS Variables for Theme Colors */
+        :root {
+            --primary-color: #4caf50;
+            /* Green */
+            --secondary-color: #ff5722;
+            /* Deep Orange */
+            --accent-color: #ffc107;
+            /* Amber */
+            --background-color: #f0f4c3;
+            /* Light Lime */
+            --text-color: #333333;
+            /* Dark Gray */
+            --light-text-color: #ffffff;
+            /* White */
+            --card-background: #ffffff;
+            /* White */
         }
 
         /* Global Styles */
@@ -268,22 +275,38 @@
 
         /* Move to Top Button Styles */
         #moveToTopBtn {
-            display: none; /* Hidden by default */
-            position: fixed; /* Fixed/sticky position */
-            bottom: 20px; /* Place the button at the bottom */
-            right: 30px; /* Place the button 30px from the right */
-            z-index: 99; /* Ensure it stays on top */
-            font-size: 20px; /* Increase font size */
-            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for glass effect */
-            color: var(--light-text-color); /* White text */
-            border: 2px solid rgba(255, 255, 255, 0.4); /* Light border for glass effect */
-            cursor: pointer; /* Pointer/hand icon */
-            padding: 15px 25px; /* Adjust padding for a more balanced look */
-            border-radius: 50px; /* Pill shape */
-            backdrop-filter: blur(10px); /* Apply blur for glass effect */
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* Softer, larger shadow */
-            transition: all 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for all properties */
-            animation: fadeIn 0.5s ease-in-out; /* Fade in animation */
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 20px;
+            /* Place the button at the bottom */
+            right: 30px;
+            /* Place the button 30px from the right */
+            z-index: 99;
+            /* Ensure it stays on top */
+            font-size: 20px;
+            /* Increase font size */
+            background-color: rgba(0, 0, 0, 0.3);
+            /* Semi-transparent background for glass effect */
+            color: var(--light-text-color);
+            /* White text */
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            /* Light border for glass effect */
+            cursor: pointer;
+            /* Pointer/hand icon */
+            padding: 15px 25px;
+            /* Adjust padding for a more balanced look */
+            border-radius: 50px;
+            /* Pill shape */
+            backdrop-filter: blur(10px);
+            /* Apply blur for glass effect */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            /* Softer, larger shadow */
+            transition: all 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            /* Smooth transition for all properties */
+            animation: fadeIn 0.5s ease-in-out;
+            /* Fade in animation */
         }
 
         @keyframes fadeIn {
@@ -298,25 +321,34 @@
 
         /* Hover Effects */
         #moveToTopBtn:hover {
-            background: rgba(255, 255, 255, 0.3); /* Slightly more opaque on hover */
-            transform: scale(1.15) translateY(-5px); /* Scale and lift button on hover */
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5); /* Larger shadow on hover */
+            background: rgba(255, 255, 255, 0.3);
+            /* Slightly more opaque on hover */
+            transform: scale(1.15) translateY(-5px);
+            /* Scale and lift button on hover */
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+            /* Larger shadow on hover */
         }
 
         /* Button Icon */
         #moveToTopBtn::before {
-            content: '⬆'; /* Unicode arrow icon */
+            content: '⬆';
+            /* Unicode arrow icon */
             display: inline-block;
             margin-right: 10px;
-            font-size: 24px; /* Larger icon */
-            vertical-align: middle; /* Align icon with text */
+            font-size: 24px;
+            /* Larger icon */
+            vertical-align: middle;
+            /* Align icon with text */
             transition: transform 0.3s ease, color 0.3s ease;
-            color: rgba(255, 255, 255, 0.8); /* Semi-transparent icon color */
+            color: rgba(255, 255, 255, 0.8);
+            /* Semi-transparent icon color */
         }
 
         #moveToTopBtn:hover::before {
-            transform: translateY(-5px); /* Move the icon up on hover */
-            color: rgba(255, 255, 255, 1); /* Full opacity icon on hover */
+            transform: translateY(-5px);
+            /* Move the icon up on hover */
+            color: rgba(255, 255, 255, 1);
+            /* Full opacity icon on hover */
         }
 
         /* Subtle Glow Animation */
@@ -335,7 +367,8 @@
         }
 
         #moveToTopBtn:hover {
-            animation: glow 1.5s infinite alternate; /* Add subtle glow effect on hover */
+            animation: glow 1.5s infinite alternate;
+            /* Add subtle glow effect on hover */
         }
     </style>
 </head>
@@ -406,7 +439,7 @@
                         <i class="fas fa-percent fa-4x mb-3 text-primary"></i>
                         <h3 class="h4 mb-2 text-primary font-weight-bold">Discounts</h3>
                         <p class="mb-3 text-muted">Get up to 50% off on selected products.</p>
-                  
+
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -415,7 +448,7 @@
                         <i class="fas fa-truck fa-4x mb-3 text-success"></i>
                         <h3 class="h4 mb-2 text-success font-weight-bold">Free Shipping</h3>
                         <p class="mb-3 text-muted">Enjoy free shipping on orders over $100.</p>
-                       
+
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -424,7 +457,7 @@
                         <i class="fas fa-gift fa-4x mb-3 text-warning"></i>
                         <h3 class="h4 mb-2 text-warning font-weight-bold">Gift Cards</h3>
                         <p class="mb-3 text-muted">Give the gift of choice with our gift cards.</p>
-                       
+
                     </div>
                 </div>
             </div>

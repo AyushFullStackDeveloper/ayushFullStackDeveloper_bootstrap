@@ -13,59 +13,92 @@
     <!-- custom css -->
     <style>
         body {
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: #f5f5f5;
+            color: #4a4a4a;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 70px;
+            /* Adjust this value based on your navbar height */
+        }
+
+        :root {
+            --primary-color: #57499a;
+            /* Default purple */
+            --secondary-color: #5a32a3;
+            /* Darker shade */
+            --hover-color: #d4bff9;
+            /* Lighter shade for hover effects */
+            --text-color: #ffffff;
+            /* Text color for links */
+            --dropdown-bg: #ffffff;
+            /* Dropdown background */
+            --dropdown-hover-bg: #f5f5f5;
+            /* Dropdown hover background */
+            --dropdown-item-color: #6f42c1;
+            /* Dropdown item text */
+            --dropdown-item-hover-color: #5a32a3;
+            /* Dropdown item text on hover */
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #4a4a4a;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
         .navbar {
-            background: linear-gradient(90deg, #007bff, #0056b3);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: background 0.3s ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         .navbar-brand {
-            color: #ffffff !important;
+            color: var(--text-color) !important;
             font-size: 1.75rem;
             font-weight: 700;
             transition: color 0.3s ease;
         }
 
         .navbar-brand:hover {
-            color: #ffc107 !important;
+            color: var(--hover-color) !important;
         }
 
         .navbar-nav .nav-link {
-            color: #ffffff !important;
+            color: var(--text-color) !important;
             font-size: 1.1rem;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .navbar-nav .nav-link.active {
-            color: #ffc107 !important;
+            color: var(--hover-color) !important;
         }
 
         .navbar-nav .nav-link:hover {
-            color: #e2e6ea !important;
+            color: #e6d3f1 !important;
         }
 
         .dropdown-menu {
-            background-color: #ffffff;
+            background-color: var(--dropdown-bg);
             border-radius: 0.5rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .dropdown-item {
-            color: #007bff;
+            color: var(--dropdown-item-color);
             transition: background 0.2s ease, color 0.2s ease;
         }
 
         .dropdown-item:hover {
-            background-color: #f8f9fa;
-            color: #0056b3;
+            background-color: var(--dropdown-hover-bg);
+            color: var(--dropdown-item-hover-color);
         }
 
         /* Carousel section adjustments */
@@ -95,7 +128,7 @@
             margin-bottom: 40px;
             font-size: 2.5rem;
             font-weight: 700;
-            color: #343a40;
+            color: #4a4a4a;
         }
 
         .card {
@@ -139,7 +172,7 @@
         .card-title {
             font-size: 1.25rem;
             font-weight: 500;
-            color: #343a40;
+            color: #4a4a4a;
         }
 
         .card-text {
@@ -150,17 +183,17 @@
         .card-price {
             font-size: 1.1rem;
             font-weight: 700;
-            color: #007bff;
+            color: #6f42c1;
         }
 
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: #6f42c1;
+            border-color: #6f42c1;
         }
 
         .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+            background-color: #5a32a3;
+            border-color: #5a32a3;
         }
     </style>
 </head>
@@ -793,7 +826,7 @@
                                 <p class="card-text">(7% off) <br>
                                     Save 5% more with Subscribe & Save <br>
                                     Get it by Thursday 15 August <br>
-                                    FREE Delivery by Amazon</p>
+                                    FREE Delivery by Amazon</p>`
                                 <p class="card-price">₹1,250 (₹250/l) M.R.P: ₹1,350 </p>
                                 <a href="#" class="btn btn-primary">Order Now</a>
                             </div>
